@@ -12,7 +12,7 @@ A remote sensing and machine learning framework for wetland vegetation mapping u
   <img src="data/images/CS4CHANGE_logo.jpg" height="70">
 </p>
 <p align="center">
-  <img src="data/images/Europe_logo.jpg" width="700">
+  <img src="data/images/Europefunded_logo.jpg" width="700">
 </p>
 
 ACT! Summer School 2026

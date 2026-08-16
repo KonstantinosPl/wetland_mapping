@@ -1,3 +1,35 @@
+RASTER_PATHS = {
+    "Parika": {
+        "drone_img": {
+            "red": r"..\data\raster\Parika\band_red.tif",
+            "green": r"..\data\raster\Parika\band_green.tif",
+            "nir": r"..\data\raster\Parika\band_nir.tif",
+            "red_edge": r"..\data\raster\Parika\band_red_edge.tif"
+        },
+        "S2": {
+            "red": r"..\data\raster\Parika\sentinel-2\red_band_sentinel_2.tif",
+            "green": r"..\data\raster\Parika\sentinel-2\green_band_sentinel_2.tif",
+            "nir": r"..\data\raster\Parika\sentinel-2\NIR_band_sentinel_2.tif",
+            "red_edge": r"..\data\raster\Parika\sentinel-2\red_edge_band_sentinel_2_resampled.tif"
+        }
+    },
+
+    "Ilmatsalu": {
+        "drone_img": {
+            "red": r"..\data\raster\Ilmatsalu\drone_imagery\band_red.tif",
+            "green": r"..\data\raster\Ilmatsalu\drone_imagery\band_green.tif",
+            "nir": r"..\data\raster\Ilmatsalu\drone_imagery\band_nir.tif",
+            "red_edge": r"..\data\raster\Ilmatsalu\drone_imagery\band_redge.tif"
+        },
+        "S2": {
+            "red": r"..\data\raster\Ilmatsalu\sentinel-2\red_band_sentinel_2.tif",
+            "green": r"..\data\raster\Ilmatsalu\sentinel-2\green_band_sentinel_2.tif",
+            "nir": r"..\data\raster\Ilmatsalu\sentinel-2\NIR_band_sentinel_2.tif",
+            "red_edge": r"..\data\raster\Ilmatsalu\sentinel-2\red_edge_band_sentinel_2_resampled.tif"
+        }
+    }
+}
+
 REGION_NAME_PARIKA = "Parika"
 REGION_NAME_ILMATSALU = "Ilmatsalu"
 

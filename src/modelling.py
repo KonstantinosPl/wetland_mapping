@@ -23,7 +23,7 @@ def clustering(input_file, output_dir, src_img=None):
 
     results = []
 
-    for i in range(4, 11):
+    for i in range(4, 12):
         kmeans = KMeans(n_clusters=i, random_state=42, n_init=10)
 
         clusters = kmeans.fit_predict(x_sample_scaled)
