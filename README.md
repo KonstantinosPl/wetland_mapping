@@ -61,8 +61,8 @@ The main analysis consists of:
 4. Interpretation of the resulting clusters.
 5. Comparison of Sentinel-2 observations with UAV imagery.
 
-Results
-Wetland Vegetation Clustering
+## Results
+### Wetland Vegetation Clustering
 
 The clustering analysis identified spatially distinct spectral vegetation patterns based on the combined information provided by the remote sensing indices. The analysis was performed independently for UAV and Sentinel-2 imagery at the Parika and Ilmatsalu study sites.
 
@@ -74,7 +74,7 @@ The clustering analysis identified spatially distinct spectral vegetation patter
 
 <br>
 
-Cluster Characteristics
+### Cluster Characteristics
 
 The resulting clusters exhibit distinct spectral profiles across the vegetation indices, highlighting differences in spectral and vegetation characteristics within each study area.
 
