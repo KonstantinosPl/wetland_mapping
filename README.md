@@ -61,6 +61,27 @@ The main analysis consists of:
 4. Interpretation of the resulting clusters.
 5. Comparison of Sentinel-2 observations with UAV imagery.
 
+Results
+Wetland Vegetation Clustering
+
+The clustering analysis identified spatially distinct spectral vegetation patterns based on the combined information provided by the remote sensing indices. The analysis was performed independently for UAV and Sentinel-2 imagery at the Parika and Ilmatsalu study sites.
+
+<p align="center"> <img src="data/images/maps/parika/covers.png" width="47%"> &nbsp;&nbsp; <img src="data/images/maps/parika/covers_s2.png" width="47%"> </p>
+
+<p align="center"> <b>Parika — UAV</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Parika — Sentinel-2</b> </p>
+
+<p align="center"> <img src="data/images/maps/ilmatsalu/covers.png" width="47%"> &nbsp;&nbsp; <img src="data/images/maps/ilmatsalu/covers_s2.png" width="47%"> </p>
+
+<p align="center"> <b>Ilmatsalu — UAV</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Ilmatsalu — Sentinel-2</b> </p>
+
+Cluster Characteristics
+
+The resulting clusters exhibit distinct spectral profiles across the vegetation indices, highlighting differences in spectral and vegetation characteristics within each study area.
+
+<p align="center"> <img src="results\plots\Parika\drone_img\heatmaps\cluster_profiles_heatmap_Parika.svg" width="47%"> &nbsp;&nbsp; <img src="results\plots\Ilmatsalu\drone_img\heatmaps\cluster_profiles_heatmap_Ilmatsalu.svg" width="47%"> </p>
+
+<p align="center"> <b>Parika</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Ilmatsalu</b> </p>
+
 ## Data
 
 The project uses remote sensing and geospatial datasets, including Sentinel-2 imagery and UAV observations.
