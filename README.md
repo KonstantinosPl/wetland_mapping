@@ -3,13 +3,13 @@
 A remote sensing and machine learning framework for wetland vegetation mapping using UAV imagery and Sentinel-2.
 
 <p align="center">
-  <img src="data/images/Europe-LAND.png" height="70">
+  <img src="data/images/Europe-LAND_logo.png" height="70">
   &nbsp;&nbsp;&nbsp;
   <img src="data/images/SUNRISE_logo.png" height="70">
   &nbsp;&nbsp;&nbsp;
   <img src="data/images/Baltic_University_logo.png" height="70">
   &nbsp;&nbsp;&nbsp;
-  <img src="data/images/CS4CHANGE_logo.png" height="70">
+  <img src="data/images/CS4CHANGE_logo.jpg" height="70">
 </p>
 
 ACT! Summer School 2026
