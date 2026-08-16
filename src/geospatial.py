@@ -5,8 +5,10 @@ import rasterio as ras
 import pandas as pd
 import numpy as np
 
-def raster2points(input_dir, output_dir):
-    os.makedirs(output_dir, exist_ok=True)
+def raster2points(input_dir, output_dir, src_img=None):
+    output_folder = os.path.join(output_dir, src_img, "points")
+
+    os.makedirs(output_folder, exist_ok=True)
 
     all_indices = None
 
@@ -42,13 +44,13 @@ def raster2points(input_dir, output_dir):
             else:
                 all_indices = all_indices.merge(df, on=["x", "y"], how="inner")
 
-    output_path = os.path.join(output_dir, "rs_indices_points.parquet")
+    output_path = os.path.join(output_folder, "rs_indices_points.parquet")
     all_indices.to_parquet(output_path, index=False)
 
     return all_indices
 
-def table2raster(input_clustered_file, reference_tif, output_dir):
-    output_folder = os.path.join(output_dir, "clustering")
+def table2raster(input_clustered_file, reference_tif, output_dir, src_img):
+    output_folder = os.path.join(output_dir, src_img, "clustering")
 
     os.makedirs(output_folder, exist_ok=True)
 

@@ -16,14 +16,16 @@ from matplotlib.colors import Normalize
 
 from sklearn.preprocessing import StandardScaler
 
-def plot_correlation_heatmap(input_path_data, output_dir, region_name=None):
-    output_folder = os.path.join(output_dir, region_name, "heatmaps")
+def plot_correlation_heatmap(input_path_data, output_dir, region_name=None, src_img=None):
+    output_folder = os.path.join(output_dir, region_name, src_img, "heatmaps")
     os.makedirs(output_folder, exist_ok=True)
 
     data = pd.read_parquet(input_path_data)
     features = data.columns[2:]
 
-    sample_data = data.sample(n=1000000, random_state=42)
+    sample_size = min(1000000, len(data))
+
+    sample_data = data.sample(n=sample_size, random_state=42)
 
     corr = sample_data[features].corr()
 
@@ -69,14 +71,14 @@ def plot_correlation_heatmap(input_path_data, output_dir, region_name=None):
     return
 
 
-def plot_hist_index(tif_paths, output_dir, boundaries_path=None, region_name=None):
+def plot_hist_index(tif_paths, output_dir, boundaries_path=None, region_name=None, src_img=None):
     """
     Reads index TIFs and strictly masks them using the original GeoJSON polygon
     so ONLY pixels inside the Zone of Interest are plotted.
 
     Creates one histogram per TIF.
     """
-    output_folder = os.path.join(output_dir, region_name)
+    output_folder = os.path.join(output_dir, region_name, src_img)
     os.makedirs(output_folder, exist_ok=True)
 
     if boundaries_path is not None:
@@ -212,21 +214,22 @@ def plot_clusters(clustered_file):
 
     return
 
-def plot_cluster_heatmap(clustered_file, output_dir, region_name):
-    output_folder = os.path.join(output_dir, region_name, "heatmaps")
+def plot_cluster_heatmap(clustered_file, output_dir, region_name, src_img=None):
+    output_folder = os.path.join(output_dir, region_name, src_img, "heatmaps")
 
     os.makedirs(output_folder, exist_ok=True)
 
     df = pd.read_parquet(clustered_file)
 
-    sample_df = df.sample(n=1000000, random_state=42).copy()
+    sample_size = min(1000000, len(df))
+    sample_data = df.sample(n=sample_size, random_state=42)
 
     features = df.columns[2:-1]
 
     scaler = StandardScaler()
-    sample_df[features] = scaler.fit_transform(sample_df[features])
+    sample_data[features] = scaler.fit_transform(sample_data[features])
 
-    cluster_profiles = (sample_df.groupby("cluster")[features].mean())
+    cluster_profiles = (sample_data.groupby("cluster")[features].mean())
 
     fig, ax = plt.subplots(figsize=(12, 6))
     im = ax.imshow(
@@ -259,20 +262,21 @@ def plot_cluster_heatmap(clustered_file, output_dir, region_name):
 
     return cluster_profiles
 
-def plot_cluster_boxplots(clustered_file, output_dir, indices, region_name=None):
-    output_folder = os.path.join(output_dir, region_name, "boxplots")
+def plot_cluster_boxplots(clustered_file, output_dir, indices, region_name=None, src_img=None):
+    output_folder = os.path.join(output_dir, region_name, src_img, "boxplots")
     os.makedirs(output_folder, exist_ok=True)
 
     df = pd.read_parquet(clustered_file)
 
-    sample_df = df.sample(n=1000000, random_state=42)
+    sample_size = min(1000000, len(df))
+    sample_data = df.sample(n=sample_size, random_state=42)
 
     for index_name in indices:
-        clusters = sorted(sample_df["cluster"].unique())
+        clusters = sorted(sample_data["cluster"].unique())
 
         data = [
-            sample_df.loc[
-                sample_df["cluster"] == cluster,
+            sample_data.loc[
+                sample_data["cluster"] == cluster,
                 index_name
             ].dropna()
             for cluster in clusters
@@ -301,8 +305,8 @@ def plot_cluster_boxplots(clustered_file, output_dir, indices, region_name=None)
 
     return
 
-def plot_cluster_distribution(clustered_file, output_dir, region_name=None):
-    output_folder = os.path.join(output_dir, region_name, "distribution")
+def plot_cluster_distribution(clustered_file, output_dir, region_name=None, src_img=None):
+    output_folder = os.path.join(output_dir, region_name, src_img, "distribution")
 
     os.makedirs(output_folder, exist_ok=True)
 

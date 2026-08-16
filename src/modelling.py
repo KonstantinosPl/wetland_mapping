@@ -6,18 +6,20 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans, MiniBatchKMeans
 from sklearn.metrics import silhouette_score
 
-def clustering(input_file, output_dir):
-    output_path = os.path.join(output_dir, "clustering")
+def clustering(input_file, output_dir, src_img=None):
+    output_path = os.path.join(output_dir, src_img, "clustering")
 
     os.makedirs(output_path, exist_ok=True)
 
     df = pd.read_parquet(input_file)
-    sample_df = df.sample(n=100000, random_state=42)
+    
+    sample_size = min(1000000, len(df))
+    sample_data = df.sample(n=sample_size, random_state=42)
 
     features = df.columns[2:]
 
     scaler = StandardScaler()
-    x_sample_scaled = scaler.fit_transform(sample_df[features])
+    x_sample_scaled = scaler.fit_transform(sample_data[features])
 
     results = []
 
@@ -61,4 +63,4 @@ def clustering(input_file, output_dir):
     results.to_csv(os.path.join(output_path, "sil_scores.csv"), index=False)
     df.to_parquet(os.path.join(output_path, "clustered_df.parquet"), index=False)
 
-    return results, df
+    return

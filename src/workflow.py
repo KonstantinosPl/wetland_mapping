@@ -31,8 +31,8 @@ def calculate_rs_indices(red_band, green_band, nir_band, red_edge_band, index_na
 
     return indices
 
-def workflow(red_path, green_path, nir_path, red_edge_path, output_dir, index_names):
-    output_folder = os.path.join(output_dir, "indices")
+def workflow(red_path, green_path, nir_path, red_edge_path, output_dir, index_names, src_img=None):
+    output_folder = os.path.join(output_dir, src_img, "indices")
 
     os.makedirs(output_folder, exist_ok=True)
 

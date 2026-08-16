@@ -60,4 +60,5 @@ The workflow is implemented in Python. Main dependencies include packages for:
 
 - Konstantinos Plataridis - [@KonstantinosPl](https://github.com/KonstantinosPl) - Aristotle University of Thessaloniki / Department of Civil Engineering
 - Poppy Ferguson - University of Strathclyde / Electronic and Electrical Engineering
-- Riccardo Martinez - EMU university / Landscape Management and Environmental Protection  
+- Riccardo Martinez - EMU University / Landscape Management and Environmental Protection  
+- David Strifler - Kiel University / Department of Environmental and Energy Economics
