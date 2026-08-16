@@ -3,19 +3,19 @@
 A remote sensing and machine learning framework for wetland vegetation mapping using UAV imagery and Sentinel-2.
 
 <p align="center">
-  <img src="data/images/Europe-LAND_logo.png" height="70">
+  <img src="data/images/logos/Europe-LAND_logo.png" height="70">
   &nbsp;&nbsp;&nbsp;
-  <img src="data/images/SUNRISE_logo.png" height="70">
+  <img src="data/images/logos/SUNRISE_logo.png" height="70">
   &nbsp;&nbsp;&nbsp;
-  <img src="data/images/Baltic_University_logo.png" height="70">
+  <img src="data/images/logos/Baltic_University_logo.png" height="70">
   &nbsp;&nbsp;&nbsp;
-  <img src="data/images/CS4CHANGE_logo.jpg" height="70">
+  <img src="data/images/logos/CS4CHANGE_logo.jpg" height="70">
 </p>
 <p align="center">
-  <img src="data/images/Europefunded_logo.jpg" width="700">
+  <img src="data/images/logos/Europefunded_logo.jpg" width="700">
 </p>
 
-ACT! Summer School 2026
+### ACT! Summer School 2026
 
 This project was developed as part of the ACT! Summer School Series: Observation, Modelling and Acting for Sustainable Land-Use in the Context of Climate Change and Biodiversity, held at the Estonian University of Life Sciences in Tartu, Estonia, 10–17 August 2026.
 
