@@ -66,29 +66,19 @@ Wetland Vegetation Clustering
 
 The clustering analysis identified spatially distinct spectral vegetation patterns based on the combined information provided by the remote sensing indices. The analysis was performed independently for UAV and Sentinel-2 imagery at the Parika and Ilmatsalu study sites.
 
-<p align="center"> <img src="data/images/maps/parika/covers.png" width="47%"> &nbsp;&nbsp; <img src="data/images/maps/parika/covers_s2.png" width="47%"> </p>
+<table> <tr> <th width="50%">Parika — UAV</th> <th width="50%">Parika — Sentinel-2</th> </tr> <tr> <td align="center"> <img src="data/images/maps/parika/covers.png" width="100%"> </td> <td align="center"> <img src="data/images/maps/parika/covers_s2.png" width="100%"> </td> </tr> </table>
 
-<p align="center"> <b>Parika — UAV</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Parika — Sentinel-2</b> </p>
+<br>
 
-<p align="center"> <img src="data/images/maps/ilmatsalu/covers.png" width="47%"> &nbsp;&nbsp; <img src="data/images/maps/ilmatsalu/covers_s2.png" width="47%"> </p>
+<table> <tr> <th width="50%">Ilmatsalu — UAV</th> <th width="50%">Ilmatsalu — Sentinel-2</th> </tr> <tr> <td align="center"> <img src="data/images/maps/ilmatsalu/covers.png" width="100%"> </td> <td align="center"> <img src="data/images/maps/ilmatsalu/covers_s2.png" width="100%"> </td> </tr> </table>
 
-<p align="center"> <b>Ilmatsalu — UAV</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Ilmatsalu — Sentinel-2</b> </p>
+<br>
 
 Cluster Characteristics
 
 The resulting clusters exhibit distinct spectral profiles across the vegetation indices, highlighting differences in spectral and vegetation characteristics within each study area.
 
-<p align="center">
-  <img src="data/images/maps/parika/cluster_profiles_heatmap_Parika.svg" width="47%">
-  &nbsp;&nbsp;
-  <img src="data/images/maps/ilmatsalu/cluster_profiles_heatmap_Ilmatsalu.svg" width="47%">
-</p>
-
-<p align="center">
-  <b>Parika</b>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>Ilmatsalu</b>
-</p>
+<table> <tr> <th width="50%">Parika</th> <th width="50%">Ilmatsalu</th> </tr> <tr> <td align="center"> <img src="data/images/maps/parika/cluster_profiles_heatmap_Parika.svg" width="100%"> </td> <td align="center"> <img src="data/images/maps/ilmatsalu/cluster_profiles_heatmap_Ilmatsalu.svg" width="100%"> </td> </tr> </table>
 
 ## Data
 
