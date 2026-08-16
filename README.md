@@ -1,6 +1,9 @@
 # Wetland Mapping
 
-A remote sensing and machine learning framework for wetland vegetation mapping using and UAV imagery and Sentinel-2.
+A remote sensing and machine learning framework for wetland vegetation mapping using UAV imagery and Sentinel-2.
+
+Summer School Project
+This project was developed as part of the ACT! Summer School Series: Observation, Modelling and Acting for Sustainable Land-Use in the Context of Climate Change and Biodiversity, held at the Estonian University of Life Sciences in Tartu, Estonia, 10–17 August 2026. The summer school was organized within the framework of the Europe-LAND and SUNRISE projects, with support from The Baltic University Programme (BUP).
 
 ## Overview
 
