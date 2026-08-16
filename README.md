@@ -78,9 +78,17 @@ Cluster Characteristics
 
 The resulting clusters exhibit distinct spectral profiles across the vegetation indices, highlighting differences in spectral and vegetation characteristics within each study area.
 
-<p align="center"> <img src="results\plots\Parika\drone_img\heatmaps\cluster_profiles_heatmap_Parika.svg" width="47%"> &nbsp;&nbsp; <img src="results\plots\Ilmatsalu\drone_img\heatmaps\cluster_profiles_heatmap_Ilmatsalu.svg" width="47%"> </p>
+<p align="center">
+  <img src="results/plots/Parika/drone_img/heatmaps/cluster_profiles_heatmap_Parika.svg" width="47%">
+  &nbsp;&nbsp;
+  <img src="results/plots/Ilmatsalu/drone_img/heatmaps/cluster_profiles_heatmap_Ilmatsalu.svg" width="47%">
+</p>
 
-<p align="center"> <b>Parika</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Ilmatsalu</b> </p>
+<p align="center">
+  <b>Parika</b>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Ilmatsalu</b>
+</p>
 
 ## Data
 
