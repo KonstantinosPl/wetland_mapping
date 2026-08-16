@@ -30,6 +30,9 @@ RASTER_PATHS = {
     }
 }
 
+SRC_IMG_DRONE_NAME = "drone_img"
+SRC_IMG_S2_NAME = "S2"
+
 REGION_NAME_PARIKA = "Parika"
 REGION_NAME_ILMATSALU = "Ilmatsalu"
 
