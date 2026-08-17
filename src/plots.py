@@ -24,7 +24,6 @@ def plot_correlation_heatmap(input_path_data, output_dir, region_name=None, src_
     features = data.columns[2:]
 
     sample_size = min(1000000, len(data))
-
     sample_data = data.sample(n=sample_size, random_state=42)
 
     corr = sample_data[features].corr()
