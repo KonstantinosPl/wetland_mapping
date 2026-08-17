@@ -35,6 +35,8 @@ This repository contains the code and workflows developed for mapping and charac
 │   ├── 03_run_clustering.ipynb
 │   ├── 04_interpretation.ipynb
 │   ├── 05_compare_drone-sentinel_imageries.ipynb
+│   ├── _band_correlations.ipynb
+│   ├── _stack_bands.ipynb_
 │   └── _visualization.ipynb
 │
 ├── results/                     # Generated outputs and figures
