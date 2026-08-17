@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 
 import rasterio as ras
 
@@ -77,3 +78,81 @@ def table2raster(input_clustered_file, reference_tif, output_dir, src_img):
         dst.write(cluster_raster, 1)
 
     return cluster_raster
+
+
+
+def stack_bands(folder, output_file, order=None):
+    """
+    Stack raster bands according to a predefined order.
+
+    Parameters
+    ----------
+    folder : str | Path
+        Folder containing the .tif files.
+    output_file : str | Path
+        Output stacked raster.
+    order : list
+        Desired order of bands.
+        Example:
+        ["green", "red", "red_edge", "nir"]
+    """
+
+    if order is None:
+        order = ["green", "red", "red_edge", "nir"]
+
+    folder = Path(folder)
+
+    # Retrieve all tif files
+    tif_files = list(folder.glob("*.tif"))
+
+    # Associate each band name with its file
+    band_files = {}
+    for tif in tif_files:
+        name = tif.stem.lower()
+
+        for band_name in order:
+            if band_name in name:
+                band_files[band_name] = tif
+                break
+
+    # Check that all requested bands exist
+    missing = [b for b in order if b not in band_files]
+    if missing:
+        raise ValueError(f"Missing bands: {missing}")
+
+    # Reorder according to 'order'
+    ordered_files = [band_files[b] for b in order]
+
+    stacked_bands = []
+
+    for i, band_file in enumerate(ordered_files, start=1):
+        print(f"{i}. Stacking {band_file.name}")
+
+        with ras.open(band_file) as src:
+            stacked_bands.append(src.read(1).astype(np.float32))
+
+    # Shape: (rows, cols, bands)
+    stacked_array = np.stack(stacked_bands, axis=2)
+
+    # Use first raster as template
+    with ras.open(ordered_files[0]) as src:
+        metadata = src.meta.copy()
+
+    metadata.update(
+        count=stacked_array.shape[2],
+        dtype=np.float32,
+        nodata=-10000,
+        compress="lzw"
+    )
+
+    # Write output
+    with ras.open(output_file, "w", **metadata) as dst:
+
+        # rasterio expects (bands, rows, cols)
+        dst.write(np.moveaxis(stacked_array, 2, 0))
+
+        # Assign band names
+        for idx, band_name in enumerate(order, start=1):
+            dst.set_band_description(idx, band_name)
+
+    print(f"\nStack saved to: {output_file}")

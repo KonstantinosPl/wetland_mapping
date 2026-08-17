@@ -22,6 +22,7 @@ Thumbs.db
 # Large/raw data
 data/raster/
 data/vector/
+presentation
 
 # Generated results
 results/
