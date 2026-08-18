@@ -16,6 +16,26 @@ from matplotlib.colors import Normalize
 
 from sklearn.preprocessing import StandardScaler
 
+from dict_categories import clusters_ilmatsalu, clusters_parika
+
+def get_cluster_names(clustered_file):
+    """
+    Get the cluster name dictionary based on the location
+    contained in the clustered file name. The string has to be in any place of clustered_file
+    """
+    if "Ilmatsalu" in clustered_file:
+        return clusters_ilmatsalu
+
+    elif "Parika" in clustered_file:
+        return clusters_parika
+
+    else:
+        raise ValueError(
+            f"Could not identify the location from clustered_file: {clustered_file}"
+        )
+
+    
+
 def plot_correlation_heatmap(input_path_data, output_dir, region_name=None, src_img=None):
     output_folder = os.path.join(output_dir, region_name, src_img, "heatmaps")
     os.makedirs(output_folder, exist_ok=True)
@@ -242,7 +262,13 @@ def plot_cluster_heatmap(clustered_file, output_dir, region_name, src_img=None):
     ax.set_xticks(range(len(features)))
     ax.set_xticklabels([feature.upper() for feature in features], rotation=45, ha="right")
     ax.set_yticks(range(len(cluster_profiles)))
-    ax.set_yticklabels(cluster_profiles.index)
+
+    ## USING STRING NAMES CORRESPONDING TO MAPPING THE CLUSTER NUMBER TO LAND COVER
+    cluster_names = get_cluster_names(clustered_file)
+
+    ax.set_yticklabels(
+    [cluster_names.get(i, str(i)) for i in cluster_profiles.index] )
+
     ax.set_ylabel("Cluster", fontsize=13)
     ax.tick_params(axis="x", labelsize=12)
     ax.tick_params(axis="y", labelsize=12)

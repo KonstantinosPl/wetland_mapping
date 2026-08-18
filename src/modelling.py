@@ -64,3 +64,4 @@ def clustering(input_file, output_dir, src_img=None):
     df.to_parquet(os.path.join(output_path, "clustered_df.parquet"), index=False)
 
     return
+
